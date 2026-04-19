@@ -1,3 +1,3 @@
-module github.com/ngs/hugo-bootstrap-blog
+module github.com/aetos382/hugo-bootstrap-blog
 
 go 1.23
