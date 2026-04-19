@@ -46,9 +46,11 @@
     {{ end }}
     
     <!-- Custom JS -->
-    <script src="{{ "js/dark-mode.js" | relURL }}"></script>
+    {{ $darkMode := resources.Get "js/dark-mode.js" | minify }}
+    <script src="{{ $darkMode.RelPermalink }}"></script>
     {{ if .Site.Params.enableSearch }}
-    <script src="{{ "js/search.js" | relURL }}"></script>
+    {{ $search := resources.Get "js/search.js" | minify }}
+    <script src="{{ $search.RelPermalink }}"></script>
     {{ end }}
     
     {{- block "scripts" . }}{{- end }}
